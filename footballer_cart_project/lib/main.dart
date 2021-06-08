@@ -1,27 +1,51 @@
 import 'package:flutter/material.dart';
 
+import 'screens/players_details_screen.dart';
+import 'model/player.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
+  final players = ["Messi", "Ronaldo", "Suarez", "Naymer"];
+
+  final List<Player> playerList = Player.getPlayer;
+
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          body: Center(
-            child: Container(
-              child: Text(
-                "Footballer Cart",
-                style: TextStyle(color: Colors.red, fontSize: 15.0),
-              ),
-            ),
-          ),
-        ));
+            appBar: AppBar(
+                backgroundColor: Colors.teal,
+                title: Text(
+                  "Footballer's Card",
+                )),
+            body: ListView.builder(
+              itemCount: playerList.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                        backgroundColor: Colors.blue,
+                        child: Text(
+                          "P",
+                          style: TextStyle(fontSize: 17),
+                        )),
+                    title: Text(playerList[index].fullName),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PlayerDtails()),
+                      );
+                    },
+                  ),
+                );
+              },
+            )));
   }
 }
