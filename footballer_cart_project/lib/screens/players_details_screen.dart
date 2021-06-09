@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:footballer_cart_project/widgets/club_logo_container.dart';
+import 'package:footballer_cart_project/widgets/details_container.dart';
+import 'package:footballer_cart_project/widgets/player_pic_container.dart';
 
 class PlayerDtails extends StatelessWidget {
   String posterName,
@@ -31,6 +34,7 @@ class PlayerDtails extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("Details"),
+          backgroundColor: Colors.black87,
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -69,298 +73,48 @@ class PlayerDtails extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "FULL NAME",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            fullName,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "FULL NAME ",
+                  detailsValue: fullName,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "NATIONALITY ",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            nationality,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "NATIONALITY ",
+                  detailsValue: nationality,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "DATE OF BIRTH",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            date0fBirth,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "DATE OF BIRTH ",
+                  detailsValue: date0fBirth,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "FULL NAME",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            fullName,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "CLUB ",
+                  detailsValue: club,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "CLUB",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            club,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "POSITION ",
+                  detailsValue: position,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "POSITION",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            position,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "NATIONAL TEAM ",
+                  detailsValue: nationalTeam,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "NATIONAL TEAM",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            nationalTeam,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "CLUB JERSEY NO ",
+                  detailsValue: clubJersey,
+                ),
                 SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "CLUB JERSEY ",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            clubJersey,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
-                SizedBox(height: 1),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    alignment: Alignment.center,
-                    width: double.infinity,
-                    color: Colors.grey.shade700,
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "NATIONAL TEAM JERSEY ",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Flexible(
-                          child: Text(
-                            nationalTeamJersey,
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orange),
-                          ),
-                        )
-                      ],
-                    )),
+                DetailsContainer(
+                  detailsTitle: "NATIONAL TEAM JERSEY NO ",
+                  detailsValue: nationalTeamJersey,
+                )
               ],
             ),
           ),
         ));
-  }
-}
-
-class PalyerPic extends StatelessWidget {
-  String playerPicture;
-  PalyerPic(this.playerPicture);
-  @override
-  Widget build(BuildContext context) {
-    AssetImage assetImage = AssetImage(playerPicture);
-    Image image = Image(
-      image: assetImage,
-    );
-    return Container(
-      child: image,
-    );
-  }
-}
-
-class ClubLogo extends StatelessWidget {
-  String clubLogo;
-  ClubLogo(this.clubLogo);
-  @override
-  Widget build(BuildContext context) {
-    AssetImage assetImage = AssetImage(clubLogo);
-    Image image = Image(
-      image: assetImage,
-      fit: BoxFit.cover,
-    );
-    return Container(height: 80, width: 100, child: image);
   }
 }
