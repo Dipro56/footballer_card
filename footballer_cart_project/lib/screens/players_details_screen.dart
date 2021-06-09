@@ -1,6 +1,31 @@
 import 'package:flutter/material.dart';
 
 class PlayerDtails extends StatelessWidget {
+  String posterName,
+      fullName,
+      nationality,
+      date0fBirth,
+      club,
+      position,
+      nationalTeam,
+      clubJersey,
+      nationalTeamJersey,
+      playerImage,
+      clubImage;
+
+  PlayerDtails(
+      {this.posterName,
+      this.fullName,
+      this.nationality,
+      this.date0fBirth,
+      this.club,
+      this.position,
+      this.nationalTeam,
+      this.clubJersey,
+      this.nationalTeamJersey,
+      this.playerImage,
+      this.clubImage});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,16 +47,16 @@ class PlayerDtails extends StatelessWidget {
                         height: 80,
                         color: Colors.grey.shade700,
                         child: Text(
-                          "LIO MESSI",
+                          posterName,
                           style: TextStyle(
-                              fontSize: 35,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),
                       ),
                     ),
                     SizedBox(width: 1),
-                    Expanded(flex: 2, child: ClubLogo())
+                    Expanded(flex: 2, child: ClubLogo(clubImage))
                   ],
                 ),
                 SizedBox(height: 1),
@@ -39,7 +64,7 @@ class PlayerDtails extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       width: double.infinity,
-                      child: PalyerPic(),
+                      child: PalyerPic(playerImage),
                     ),
                   ],
                 ),
@@ -63,7 +88,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "LIONEL ANDRESS MESSI",
+                            fullName,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -92,7 +117,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "ARGENTAIN",
+                            nationality,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -121,7 +146,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "24.06.1987",
+                            date0fBirth,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -150,7 +175,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "LIONEL ANDRESS MESSI",
+                            fullName,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -179,7 +204,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "FC BARCELONA",
+                            club,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -208,7 +233,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "CENTER FORWORD",
+                            position,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -237,7 +262,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "ARGENTINA",
+                            nationalTeam,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -266,7 +291,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "10",
+                            clubJersey,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -295,7 +320,7 @@ class PlayerDtails extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            "10",
+                            nationalTeamJersey,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -312,9 +337,11 @@ class PlayerDtails extends StatelessWidget {
 }
 
 class PalyerPic extends StatelessWidget {
+  String playerPicture;
+  PalyerPic(this.playerPicture);
   @override
   Widget build(BuildContext context) {
-    AssetImage assetImage = AssetImage('images/Messi.jpg');
+    AssetImage assetImage = AssetImage(playerPicture);
     Image image = Image(
       image: assetImage,
     );
@@ -325,9 +352,11 @@ class PalyerPic extends StatelessWidget {
 }
 
 class ClubLogo extends StatelessWidget {
+  String clubLogo;
+  ClubLogo(this.clubLogo);
   @override
   Widget build(BuildContext context) {
-    AssetImage assetImage = AssetImage('images/barca_logo.png');
+    AssetImage assetImage = AssetImage(clubLogo);
     Image image = Image(
       image: assetImage,
       fit: BoxFit.cover,

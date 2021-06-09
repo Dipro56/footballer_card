@@ -8,8 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final players = ["Messi", "Ronaldo", "Suarez", "Naymer"];
-
   final List<Player> playerList = Player.getPlayer;
 
   Widget build(BuildContext context) {
@@ -33,14 +31,28 @@ class MyApp extends StatelessWidget {
                     leading: CircleAvatar(
                         backgroundColor: Colors.blue,
                         child: Text(
-                          "P",
+                          "Pi",
                           style: TextStyle(fontSize: 17),
                         )),
-                    title: Text(playerList[index].fullName),
+                    title: Text(playerList[index].posterName),
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => PlayerDtails()),
+                        MaterialPageRoute(
+                            builder: (context) => PlayerDtails(
+                                  posterName: playerList[index].posterName,
+                                  fullName: playerList[index].fullName,
+                                  nationality: playerList[index].nationalTeam,
+                                  date0fBirth: playerList[index].date0fBirth,
+                                  club: playerList[index].club,
+                                  position: playerList[index].position,
+                                  nationalTeam: playerList[index].nationalTeam,
+                                  clubJersey: playerList[index].clubJersey,
+                                  nationalTeamJersey:
+                                      playerList[index].nationalTeamJersey,
+                                  playerImage: playerList[index].playerImage,
+                                  clubImage: playerList[index].clubImage,
+                                )),
                       );
                     },
                   ),
